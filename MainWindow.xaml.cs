@@ -17,8 +17,9 @@ namespace C_Sharp_WindowSize_Changer {
         public MainWindow() {
             InitializeComponent();
             DataContext = new ViewModel();
+            ViewModel viewModel = (ViewModel) DataContext;
 
-            ProcessListBox.Items.Add("aa");
+            viewModel.ProcessList.Add("Process 1");
         }
     }
 }

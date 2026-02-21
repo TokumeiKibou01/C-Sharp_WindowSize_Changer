@@ -17,8 +17,18 @@ namespace C_Sharp_WindowSize_Changer {
             }
         }
 
+        private List<string> _processList;
+        public List<string> ProcessList {
+            get { return _processList; }
+            set {
+                _processList = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ProcessList)));
+            }
+        }
+
         public ViewModel() {
             ButtonCommand = new ButtonCommand(this);
+            ProcessList = new List<string>();
         }
 
     }
