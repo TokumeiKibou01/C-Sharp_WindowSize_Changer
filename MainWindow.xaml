@@ -21,7 +21,7 @@
             <Button Name="Minus" Content="-" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.MinusCommand}"></Button>
             <TextBlock Name="SizeBox" Width="100" Height="50" Text="{Binding WindowWidth}"></TextBlock>
             <Button Name="Plus" Content="+" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.PlusCommand}"></Button>
-            <Button Name="Apply" Content="適用" FontSize="20" Width="100" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
+            <Button Name="Apply" Content="適用" FontSize="20" Width="100" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.ApplyCommand}"></Button>
         </StackPanel>
 
         <ListBox Grid.Row="1" Grid.ColumnSpan="2" Name="ProcessListBox" ItemsSource="{Binding ProcessList}" d:ItemsSource="{d:SampleData ItemCount=5}" SelectedItem="{Binding SelectedItem}"/>
