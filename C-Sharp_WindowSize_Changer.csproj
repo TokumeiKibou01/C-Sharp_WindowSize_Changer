@@ -9,4 +9,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="G:\User_Files\Dev\TokumeiKibou\C-Sharp_WindowSize_Changer\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="G:\User_Files\Dev\TokumeiKibou\C-Sharp_WindowSize_Changer\.editorconfig" />
+  </ItemGroup>
+
 </Project>

@@ -9,16 +9,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace C_Sharp_WindowSize_Changer
-{
+namespace C_Sharp_WindowSize_Changer {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
+    public partial class MainWindow : Window {
+        public MainWindow() {
             InitializeComponent();
+
+            ProcessListBox.Items.Add("aa");
         }
     }
 }

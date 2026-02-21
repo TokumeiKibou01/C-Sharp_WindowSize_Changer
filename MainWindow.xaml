@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Name="Minus" Content="-" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
+            <TextBlock Name="SizeBox" Width="100" Height="50"></TextBlock>
+            <Button Name="Plus" Content="+" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
+            <Button Name="Apply" Content="適用" FontSize="20" Width="100" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
+        </StackPanel>
+
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" Name="ProcessListBox" d:ItemsSource="{d:SampleData ItemCount=5}"/>
     </Grid>
 </Window>
