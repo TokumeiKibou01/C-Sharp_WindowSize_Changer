@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,7 +20,11 @@ namespace C_Sharp_WindowSize_Changer {
             DataContext = new ViewModel();
             ViewModel viewModel = (ViewModel) DataContext;
 
-            viewModel.ProcessList.Add("Process 1");
+            foreach (var process in Process.GetProcesses()) {
+                if (process.MainWindowHandle != IntPtr.Zero) { // ウインドウハンドルがあるもののみ
+                    viewModel.ProcessList.Add(process.ProcessName);
+                }
+            }
         }
     }
 }
