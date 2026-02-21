@@ -16,6 +16,7 @@ namespace C_Sharp_WindowSize_Changer {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+            DataContext = new ViewModel();
 
             ProcessListBox.Items.Add("aa");
         }

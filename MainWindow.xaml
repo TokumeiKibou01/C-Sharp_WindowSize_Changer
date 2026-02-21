@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:C_Sharp_WindowSize_Changer"
+        xmlns:local="clr-namespace:C_Sharp_WindowSize_Changer" d:DataContext="{d:DesignInstance Type=local:ViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -18,9 +18,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Name="Minus" Content="-" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
-            <TextBlock Name="SizeBox" Width="100" Height="50"></TextBlock>
-            <Button Name="Plus" Content="+" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
+            <Button Name="Minus" Content="-" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.MinusCommand}"></Button>
+            <TextBlock Name="SizeBox" Width="100" Height="50" Text="{Binding WindowWidth}"></TextBlock>
+            <Button Name="Plus" Content="+" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.PlusCommand}"></Button>
             <Button Name="Apply" Content="適用" FontSize="20" Width="100" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
         </StackPanel>
 
