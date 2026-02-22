@@ -17,10 +17,17 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Name="Minus" Content="-" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.MinusCommand}"></Button>
-            <TextBlock Name="SizeBox" Width="100" Height="50" Text="{Binding WindowWidth}"></TextBlock>
-            <Button Name="Plus" Content="+" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.PlusCommand}"></Button>
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            <TextBlock Name="WidthText" Text="幅" FontSize="20" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            <Button Name="WidthMinus" Content="-" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.WidthMinusCommand}"></Button>
+            <TextBlock Name="WidthSizeBox" Width="100" Height="50" Text="{Binding WindowWidth}"></TextBlock>
+            <Button Name="WidthPlus" Content="+" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.WidthPlusCommand}" Margin="0,0,10,0"></Button>
+            
+            <TextBlock Name="HeightText" Text="高さ" FontSize="20" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            <Button Name="HeightMinus" Content="-" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.HeightMinusCommand}"></Button>
+            <TextBlock Name="HeightSizeBox" Width="100" Height="50" Text="{Binding WindowHeight}"></TextBlock>
+            <Button Name="HeightPlus" Content="+" FontSize="30" Width="50" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.HeightPlusCommand}"></Button>
+            
             <Button Name="Apply" Content="適用" FontSize="20" Width="100" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding ButtonCommand.ApplyCommand}"></Button>
         </StackPanel>
 

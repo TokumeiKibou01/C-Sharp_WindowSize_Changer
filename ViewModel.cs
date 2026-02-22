@@ -35,6 +35,15 @@ namespace C_Sharp_WindowSize_Changer {
             }
         }
 
+        private int _windowHeight;
+        public int WindowHeight {
+            get { return _windowHeight; }
+            set {
+                _windowHeight = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WindowHeight)));
+            }
+        }
+
         private List<string> _processList;
         public List<string> ProcessList {
             get { return _processList; }
@@ -54,6 +63,7 @@ namespace C_Sharp_WindowSize_Changer {
                 IntPtr hwnd = process.MainWindowHandle;
                 if (GetWindowRect(hwnd, out RECT rect)) {
                     WindowWidth = rect.Right - rect.Left;  //ウインドウ幅を表示する
+                    WindowHeight = rect.Bottom - rect.Top; //ウインドウ高さを表示する
                 }
             }
         }

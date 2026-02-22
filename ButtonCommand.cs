@@ -16,30 +16,42 @@ namespace C_Sharp_WindowSize_Changer {
 
         private readonly ViewModel mainViewModel_;
 
-        public ICommand PlusCommand { get; private set; }
-        public ICommand MinusCommand { get; private set; }
+        public ICommand WidthPlusCommand { get; private set; }
+        public ICommand WidthMinusCommand { get; private set; }
+        public ICommand HeightPlusCommand { get; private set; }
+        public ICommand HeightMinusCommand { get; private set; }
         public ICommand ApplyCommand { get; private set; }
 
         public ButtonCommand(ViewModel mainViewModel) {
             mainViewModel_ = mainViewModel;
-            PlusCommand = new BaseCommand(RunPlusCommand);
-            MinusCommand = new BaseCommand(RunMinusCommand);
+            WidthPlusCommand = new BaseCommand(RunWidthPlusCommand);
+            WidthMinusCommand = new BaseCommand(RunWidthMinusCommand);
+            HeightPlusCommand = new BaseCommand(RunHeightPlusCommand);
+            HeightMinusCommand = new BaseCommand(RunHeightMinusCommand);
             ApplyCommand = new BaseCommand(RunApplyCommand);
         }
 
-        private void RunPlusCommand() {
+        private void RunWidthPlusCommand() {
             mainViewModel_.WindowWidth += 10;
         }
 
-        private void RunMinusCommand() {
+        private void RunWidthMinusCommand() {
             mainViewModel_.WindowWidth -= 10;
+        }
+
+        private void RunHeightPlusCommand() {
+            mainViewModel_.WindowHeight += 10;
+        }
+
+        private void RunHeightMinusCommand() {
+            mainViewModel_.WindowHeight -= 10;
         }
 
         private void RunApplyCommand() {
             var process = Process.GetProcessesByName(mainViewModel_.SelectedItem)[0];
             var hwnd = process.MainWindowHandle;
             if (GetWindowRect(hwnd, out RECT rect)) {
-                MoveWindow(hwnd, rect.Left, rect.Top, mainViewModel_.WindowWidth, rect.Bottom - rect.Top, true);
+                MoveWindow(hwnd, rect.Left, rect.Top, mainViewModel_.WindowWidth, mainViewModel_.WindowHeight, true);
             }
             
         }
